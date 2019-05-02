@@ -1,0 +1,43 @@
+﻿@model falabellaSeguros.Models.compania
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Compania</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre Compañia
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.compania_Nombre)
+        </dd>
+
+        <dt>
+            Dirección Compañia
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.compania_Direccion)
+        </dd>
+
+        <dt>
+            Telefono Compañia
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.compania_Telefono)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.compania_Id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

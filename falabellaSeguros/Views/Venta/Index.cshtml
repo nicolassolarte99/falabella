@@ -1,0 +1,79 @@
+﻿@model IEnumerable<falabellaSeguros.Models.venta>
+
+@{
+    ViewBag.Title = "LIsta de Ventas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (System.Web.HttpContext.Current.Session["NombreUsuario"] != null)
+{
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Nueva Venta", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_NomSolicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_ApeSolicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_TipoDocSolicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_NumDocSolicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_TelSolicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_AgenteVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venta_FechaReg)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_NomSolicitante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_ApeSolicitante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_TipoDocSolicitante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_NumDocSolicitante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_TelSolicitante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_AgenteVenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venta_FechaReg)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.venta_Id }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.venta_Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.venta_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

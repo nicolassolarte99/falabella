@@ -1,0 +1,9 @@
+﻿@model IEnumerable<falabellaSeguros.Models.producto>
+
+<select class="form-control" id="venta_Producto" name="venta_Producto">
+    @foreach (var item in Model)
+    {
+    <option value="@item.producto_Id">@item.producto_Nombre</option>
+    }
+    
+</select>

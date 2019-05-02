@@ -1,0 +1,85 @@
+﻿@model falabellaSeguros.Models.venta
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (System.Web.HttpContext.Current.Session["NombreUsuario"] != null)
+{
+    <h2>Details</h2>
+
+    <div>
+        <h4>venta</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_NomSolicitante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.venta_NomSolicitante)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_ApeSolicitante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.venta_ApeSolicitante)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_TipoDocSolicitante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.venta_TipoDocSolicitante)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_NumDocSolicitante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.venta_NumDocSolicitante)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_TelSolicitante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.venta_TelSolicitante)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_AgenteVenta)
+            </dt>
+
+            <dd>
+                @falabellaSeguros.Controllers.VentaController.agente()
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_Producto)
+            </dt>
+
+            <dd>
+                @falabellaSeguros.Controllers.VentaController.NombreProducto(Model.venta_Producto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.venta_FechaReg)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.venta_FechaReg)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new {  id = Model.venta_Id }) |
+        @Html.ActionLink("Regresar", "Index")
+    </p>
+}

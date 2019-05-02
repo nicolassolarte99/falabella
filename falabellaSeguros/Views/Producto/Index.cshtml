@@ -1,0 +1,52 @@
+﻿@model IEnumerable<falabellaSeguros.Models.producto>
+
+@{
+    ViewBag.Title = "Creación de Servicios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@if (System.Web.HttpContext.Current.Session["NombreUsuario"] != null)
+{
+    <p>
+        @Html.ActionLink("Crear Servicio", "Create")
+    </p>
+}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_Compania)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_Nombre)
+            </td>
+            <td>
+                @falabellaSeguros.Controllers.ProductoController.DescTipo(item.producto_Tipo)
+            </td>
+            <td>
+                @falabellaSeguros.Controllers.ProductoController.NombreCompania(item.producto_Compania)
+            </td>
+            @if (System.Web.HttpContext.Current.Session["NombreUsuario"] != null)
+            {
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.producto_Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.producto_Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.producto_Id })
+                </td>
+            }
+            </tr>
+        }
+
+    </table>

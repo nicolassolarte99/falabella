@@ -1,0 +1,43 @@
+﻿@model falabellaSeguros.Models.producto
+
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.producto_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producto_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producto_Tipo)
+        </dt>
+
+        <dd>
+            @falabellaSeguros.Controllers.ProductoController.DescTipo(Model.producto_Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producto_Compania)
+        </dt>
+
+        <dd>
+            @falabellaSeguros.Controllers.ProductoController.NombreCompania(Model.producto_Compania)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.producto_Id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="313368552c1a45d3804c297fb8ea1ea9" Name="Diagram1">
+        <EntityTypeShape EntityType="falabella_SegurosModel.compania" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="falabella_SegurosModel.producto" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="falabella_SegurosModel.tipoProd" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="falabella_SegurosModel.usuario" Width="1.5" PointX="3" PointY="5.5" />
+        <EntityTypeShape EntityType="falabella_SegurosModel.venta" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="falabella_SegurosModel.FK_producto_compania" />
+        <AssociationConnector Association="falabella_SegurosModel.FK_producto_tipoProd" />
+        <AssociationConnector Association="falabella_SegurosModel.FK_venta_producto" />
+        <AssociationConnector Association="falabella_SegurosModel.FK_venta_usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
